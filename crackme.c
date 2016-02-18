@@ -8,7 +8,8 @@
 */
 
 int sameAtIndex(int g1[], int g2[]){
-	for(int i=0; i < 4; i++){
+	int i;
+	for(i=0; i < 4; i++){
 		if (g1[i] == g2[i]){
 			return 1;
 		}
@@ -28,13 +29,15 @@ int check_serial(char *s){
 	}
 	
 	//check format is xxxx-xxxx-xxxx-xxxx
-	for(int i=4; i<20; i=i+5){
+	int i;
+	for(i=4; i<20; i=i+5){
 		if (i<15 && s[i] != '-'){
 			return 0;
 		}
 		
 		//check if it's numbers
-		for (int j=i-4; j<i; j++){
+		int j;
+		for (j=i-4; j<i; j++){
 			if (s[j] < 48 || s[j] > 57){
 				return 0;
 			}
@@ -56,7 +59,7 @@ int check_serial(char *s){
 	int avg_sums = (sum_first+sum_second+sum_third)/3;
 
 	//constraint 2
-	for(int i=0; i<4; i++){
+	for(i=0; i<4; i++){
 		if (fourth[i] < 3 || fourth[i] > 8){
 			return 0;
 		}
